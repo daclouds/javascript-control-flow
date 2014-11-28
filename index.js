@@ -23,6 +23,7 @@ function elementHighlighter(elements, tagName) {
 
 var blockElements = document.getElementById("blockElements");
 var inlineElements = document.getElementById("inlineElements");
+var timer = document.getElementById("timer");
 
 blockElements.addEventListener("click", function(){
     var h1 = document.getElementsByTagName("h1");
@@ -36,4 +37,25 @@ inlineElements.addEventListener("click", function(){
 	var b = document.getElementsByTagName("b");
 
 	elementHighlighter(b, 'b');
+});
+
+function progress(counter) {
+	debugger;
+	var progress = document.getElementById("progress");
+	var width = document.getElementById("progressbar").offsetWidth;
+	progress.style['margin-left'] = width / 10 * counter + 'px';
+}
+
+timer.addEventListener("click", function() {
+	var notFinishedYet = true;
+	var counter = 0;
+	
+	while (notFinishedYet) {
+		if (counter == 10) {
+			notFinishedYet = false;
+		}
+		setTimeout(progress(counter), counter * 1000);
+		console.log(counter++);
+	}
+	
 });
