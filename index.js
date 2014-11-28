@@ -2,22 +2,21 @@ var name = "daclouds";
 console.log("Hello, " + name);
 
 function elementHighlighter(elements, tagName) {
-	for (var i=0; i < elements.length; i++) {
+	$.each(elements, function(i, element) {
 		switch (tagName) {
 			case 'h1':
-				elements[i].style['background-color'] = '#259b24';
+				element.style['background-color'] = '#259b24';
 				break;
 			case 'div':
-				elements[i].style['background-color'] = '#aed581';
+				element.style['background-color'] = '#aed581';
 				break;
 			case 'b':
-				elements[i].style['background-color'] = '#8bc34a';
+				element.style['background-color'] = '#8bc34a';
 				break;
 			default:
 				break;
 		}
-		
-	}
+	});
 	
 }
 
