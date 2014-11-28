@@ -38,23 +38,12 @@ inlineElements.click(function() {
 	elementHighlighter(b, 'b');
 });
 
-function progress(counter) {
-	debugger;
-	var progress = $('#progress');
-	var width = $('#progressbar').width();
-	progress.css('margin-left', width / 10 * counter);
-}
-
+$("#progress").width(0);
 timer.click(function() {
 	var notFinishedYet = true;
 	var counter = 0;
 	
-	while (notFinishedYet) {
-		if (counter == 10) {
-			notFinishedYet = false;
-		}
-		setTimeout(progress(counter), counter * 1000);
-		console.log(counter++);
-	}
+	var width = $('#progressbar').width() - 40;
+	$("#progress").animate({width: width}, 'slow');
 	
 });
