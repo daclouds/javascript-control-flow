@@ -21,32 +21,32 @@ function elementHighlighter(elements, tagName) {
 	
 }
 
-var blockElements = document.getElementById("blockElements");
-var inlineElements = document.getElementById("inlineElements");
-var timer = document.getElementById("timer");
+var blockElements = $('#blockElements');
+var inlineElements = $('#inlineElements');
+var timer = $('#timer');
 
-blockElements.addEventListener("click", function(){
-    var h1 = document.getElementsByTagName("h1");
+blockElements.click(function() {
+    var h1 = $('h1');
 	elementHighlighter(h1, 'h1');
 
-	var div = document.getElementsByTagName("div");
+	var div = $('div');
 	elementHighlighter(div, 'div');
 });
 
-inlineElements.addEventListener("click", function(){
-	var b = document.getElementsByTagName("b");
+inlineElements.click(function() {
+	var b = $('b');
 
 	elementHighlighter(b, 'b');
 });
 
 function progress(counter) {
 	debugger;
-	var progress = document.getElementById("progress");
-	var width = document.getElementById("progressbar").offsetWidth;
-	progress.style['margin-left'] = width / 10 * counter + 'px';
+	var progress = $('#progress');
+	var width = $('#progressbar').width();
+	progress.css('margin-left', width / 10 * counter);
 }
 
-timer.addEventListener("click", function() {
+timer.click(function() {
 	var notFinishedYet = true;
 	var counter = 0;
 	
